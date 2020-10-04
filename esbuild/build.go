@@ -101,14 +101,17 @@ func check(e error) {
 	}
 }
 
+const PROD = "production"
+
 func main() {
 	// cssExtractor := CSSExtractor{}
 	svgrPlugin := SVGR{}
 	env := os.Getenv("NODE_ENV")
 	if env == "" {
-		env = "production"
+		env = PROD
 	}
-	result := api.Build(api.BuildOptions{
+	minify := env == PROD
+	config := api.BuildOptions{
 		// EntryPoints: []string{"../src/assets/icons/internal.tsx"},
 		EntryPoints: []string{"../src/entry.tsx"},
 		Defines: map[string]string{
@@ -119,21 +122,22 @@ func main() {
 		Loaders: map[string]api.Loader{
 			".svg": api.LoaderFile,
 		},
-		Externals:         []string{},
-		MinifySyntax:      true,
-		MinifyIdentifiers: true,
-		MinifyWhitespace:  true,
-		Target:            api.ES2019,
-		Bundle:            true,
-		Write:             true,
-		Splitting:         true,
-		Format:            api.FormatESModule,
-		LogLevel:          api.LogLevelInfo,
-		Outdir:            "../es_dist",
+		Externals:    []string{},
+		MinifySyntax: minify,
+		Target:       api.ES2019,
+		Bundle:       true,
+		Write:        true,
+		Splitting:    true,
+		Format:       api.FormatESModule,
+		LogLevel:     api.LogLevelInfo,
+		Outdir:       "../es_dist",
 		Plugins: []func(api.Plugin){
 			svgrPlugin.Plugin,
 		},
-	})
+	}
+	err := os.RemoveAll(config.Outdir)
+	check(err)
+	result := api.Build(config)
 
 	// err := ioutil.WriteFile("../dist/test.css", cssExtractor.Bytes(), 0644)
 	// check(err)
