@@ -123,9 +123,9 @@ func main() {
 			// todo, check if we want to go with webpack for parsing the whole app
 			// "react"
 		},
-		MinifySyntax:      true,
-		MinifyIdentifiers: true,
-		MinifyWhitespace:  true,
+		// MinifySyntax:      true,
+		// MinifyIdentifiers: true,
+		// MinifyWhitespace:  true,
 		Target:            api.ES2019,
 		Bundle:            true,
 		Metafile:          "./meta",

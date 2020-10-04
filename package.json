@@ -21,7 +21,8 @@
   "scripts": {
     "postinstall": "cd esbuild && go get .",
     "start": "node ./scripts/start",
-    "build": "react-scripts build",
+    "build:webpack": "react-scripts build",
+    "build": "node ./scripts/build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

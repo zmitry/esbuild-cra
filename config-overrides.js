@@ -6,14 +6,13 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 let cb;
 
-watcher.subscribe(path.resolve(process.cwd(), "./src"), (err, events) => {
-  if (cb) {
-    cb(events);
-  }
-});
-
 module.exports = {
   devServer: (config) => {
+    watcher.subscribe(path.resolve(process.cwd(), "./src"), (err, events) => {
+      if (cb) {
+        cb(events);
+      }
+    });
     return (...args) => {
       let rs = config(...args);
       let originalBefore = rs.after;
