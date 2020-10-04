@@ -104,33 +104,29 @@ func check(e error) {
 func main() {
 	// cssExtractor := CSSExtractor{}
 	svgrPlugin := SVGR{}
-
+	env := os.Getenv("NODE_ENV")
+	if env == "" {
+		env = "production"
+	}
 	result := api.Build(api.BuildOptions{
 		// EntryPoints: []string{"../src/assets/icons/internal.tsx"},
 		EntryPoints: []string{"../src/entry.tsx"},
 		Defines: map[string]string{
-			"process.env.NODE_ENV":          "'development'",
+			"process.env.NODE_ENV":          fmt.Sprintf("'%s'", env),
 			"process.env.REACT_APP_VERSION": "'{}'",
 			"global":                        "window",
 		},
 		Loaders: map[string]api.Loader{
-			".svg": api.LoaderBase64,
+			".svg": api.LoaderFile,
 		},
-		Externals: []string{
-			// "assets/styles",
-			// "assets/icons/internal",
-			// "assets/images",
-			// todo, check if we want to go with webpack for parsing the whole app
-			// "react"
-		},
-		// MinifySyntax:      true,
-		// MinifyIdentifiers: true,
-		// MinifyWhitespace:  true,
+		Externals:         []string{},
+		MinifySyntax:      true,
+		MinifyIdentifiers: true,
+		MinifyWhitespace:  true,
 		Target:            api.ES2019,
 		Bundle:            true,
-		Metafile:          "./meta",
 		Write:             true,
-		Splitting:         false,
+		Splitting:         true,
 		Format:            api.FormatESModule,
 		LogLevel:          api.LogLevelInfo,
 		Outdir:            "../es_dist",

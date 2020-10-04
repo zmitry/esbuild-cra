@@ -5,7 +5,7 @@ https://golang.org/doc/install
 
 ## how it works
 
-First we build all the js files at entry `entry.tsx` and output it to the `es_dist` folder and the using webpack we copy that output + built html into dist folder
+First we build all the js files at entry `entry.tsx` and send output into the `es_dist` folder and then using webpack we copy that output + built html into `build` folder
 Also we hook up into webpack dev server and show esbuild errors during development.
 
 ## TODO
@@ -29,3 +29,5 @@ What doesn't work:
 
 watch implemented using parcel watch which uses watchman and fallbacks to brute force so for speed pls install watchman.
 Esbuild config is located in ./esbuild folder
+
+Build with webpack also works but you have to replace all `import {ReactComponent as Logo} from 'svgr:./logo.svg' to regular import

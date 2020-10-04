@@ -10,9 +10,12 @@ const argv = require("yargs").argv;
 // override config in memory
 require.cache[require.resolve(paths.webpackConfigPath)].exports = (env) => {
   const config = overrides.webpack(webpackConfig(env), env);
-  config.entry = config.entry[0];
+  if (argv.entry) {
+    config.entry = path.resolve(argv.entry);
+  }
   return config;
 };
+
 require.cache[
   require.resolve(paths.devServerConfigPath)
 ].exports = overrides.devServer(devServerConfig, process.env.NODE_ENV);

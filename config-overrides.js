@@ -6,6 +6,12 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 let cb;
 
+if (process.env.NODE_ENV === "production" && !process.env.WEBPACK) {
+  execSync("go run ./build.go", {
+    cwd: path.resolve(__dirname, "./esbuild"),
+  });
+}
+
 module.exports = {
   devServer: (config) => {
     watcher.subscribe(path.resolve(process.cwd(), "./src"), (err, events) => {
