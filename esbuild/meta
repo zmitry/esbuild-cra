@@ -1,0 +1,218 @@
+{
+  "inputs": {
+    "svg:/Users/dmitryzherebko/Documents/esbuild-cra/src/logo.svg": {
+      "bytes": 2895,
+      "imports": [
+        {
+          "path": "../node_modules/react/index.js"
+        },
+        {
+          "path": "../src/logo.svg"
+        }
+      ]
+    },
+    "../node_modules/object-assign/index.js": {
+      "bytes": 2108,
+      "imports": []
+    },
+    "../node_modules/prop-types/checkPropTypes.js": {
+      "bytes": 3781,
+      "imports": [
+        {
+          "path": "../node_modules/prop-types/lib/ReactPropTypesSecret.js"
+        }
+      ]
+    },
+    "../node_modules/prop-types/lib/ReactPropTypesSecret.js": {
+      "bytes": 314,
+      "imports": []
+    },
+    "../node_modules/react-dom/cjs/react-dom.development.js": {
+      "bytes": 858814,
+      "imports": [
+        {
+          "path": "../node_modules/react/index.js"
+        },
+        {
+          "path": "../node_modules/object-assign/index.js"
+        },
+        {
+          "path": "../node_modules/scheduler/index.js"
+        },
+        {
+          "path": "../node_modules/prop-types/checkPropTypes.js"
+        },
+        {
+          "path": "../node_modules/scheduler/tracing.js"
+        }
+      ]
+    },
+    "../node_modules/react-dom/index.js": {
+      "bytes": 1363,
+      "imports": [
+        {
+          "path": "../node_modules/react-dom/cjs/react-dom.development.js"
+        }
+      ]
+    },
+    "../node_modules/react/cjs/react.development.js": {
+      "bytes": 60645,
+      "imports": [
+        {
+          "path": "../node_modules/object-assign/index.js"
+        },
+        {
+          "path": "../node_modules/prop-types/checkPropTypes.js"
+        }
+      ]
+    },
+    "../node_modules/react/index.js": {
+      "bytes": 190,
+      "imports": [
+        {
+          "path": "../node_modules/react/cjs/react.development.js"
+        }
+      ]
+    },
+    "../node_modules/scheduler/cjs/scheduler-tracing.development.js": {
+      "bytes": 9003,
+      "imports": []
+    },
+    "../node_modules/scheduler/cjs/scheduler.development.js": {
+      "bytes": 23762,
+      "imports": []
+    },
+    "../node_modules/scheduler/index.js": {
+      "bytes": 198,
+      "imports": [
+        {
+          "path": "../node_modules/scheduler/cjs/scheduler.development.js"
+        }
+      ]
+    },
+    "../node_modules/scheduler/tracing.js": {
+      "bytes": 214,
+      "imports": [
+        {
+          "path": "../node_modules/scheduler/cjs/scheduler-tracing.development.js"
+        }
+      ]
+    },
+    "../src/App.css": {
+      "bytes": 564,
+      "imports": []
+    },
+    "../src/App.tsx": {
+      "bytes": 581,
+      "imports": [
+        {
+          "path": "../node_modules/react/index.js"
+        },
+        {
+          "path": "svg:/Users/dmitryzherebko/Documents/esbuild-cra/src/logo.svg"
+        },
+        {
+          "path": "../src/App.css"
+        }
+      ]
+    },
+    "../src/entry.tsx": {
+      "bytes": 243,
+      "imports": [
+        {
+          "path": "../node_modules/react/index.js"
+        },
+        {
+          "path": "../node_modules/react-dom/index.js"
+        },
+        {
+          "path": "../src/index.css"
+        },
+        {
+          "path": "../src/App.tsx"
+        }
+      ]
+    },
+    "../src/index.css": {
+      "bytes": 366,
+      "imports": []
+    },
+    "../src/logo.svg": {
+      "bytes": 2671,
+      "imports": []
+    },
+    ,
+    
+  },
+  "outputs": {
+    "../es_dist/entry.js": {
+      "imports": [],
+      "inputs": {
+        "../node_modules/object-assign/index.js": {
+          "bytesInOutput": 982
+        },
+        "../node_modules/prop-types/lib/ReactPropTypesSecret.js": {
+          "bytesInOutput": 103
+        },
+        "../node_modules/prop-types/checkPropTypes.js": {
+          "bytesInOutput": 1108
+        },
+        "../node_modules/react/cjs/react.development.js": {
+          "bytesInOutput": 19965
+        },
+        "../node_modules/react/index.js": {
+          "bytesInOutput": 51
+        },
+        "../node_modules/scheduler/cjs/scheduler.development.js": {
+          "bytesInOutput": 6997
+        },
+        "../node_modules/scheduler/index.js": {
+          "bytesInOutput": 51
+        },
+        "../node_modules/scheduler/cjs/scheduler-tracing.development.js": {
+          "bytesInOutput": 3029
+        },
+        "../node_modules/scheduler/tracing.js": {
+          "bytesInOutput": 51
+        },
+        "../node_modules/react-dom/cjs/react-dom.development.js": {
+          "bytesInOutput": 246038
+        },
+        "../node_modules/react-dom/index.js": {
+          "bytesInOutput": 51
+        },
+        "../src/index.css": {
+          "bytesInOutput": 0
+        },
+        "../src/logo.svg": {
+          "bytesInOutput": 3574
+        },
+        "svg:/Users/dmitryzherebko/Documents/esbuild-cra/src/logo.svg": {
+          "bytesInOutput": 2819
+        },
+        "../src/App.css": {
+          "bytesInOutput": 0
+        },
+        "../src/App.tsx": {
+          "bytesInOutput": 484
+        },
+        "../src/entry.tsx": {
+          "bytesInOutput": 191
+        }
+      },
+      "bytes": 287327
+    },
+    "../es_dist/entry.css": {
+      "imports": [],
+      "inputs": {
+        "../src/index.css": {
+          "bytesInOutput": 310
+        },
+        "../src/App.css": {
+          "bytesInOutput": 445
+        }
+      },
+      "bytes": 756
+    }
+  }
+}

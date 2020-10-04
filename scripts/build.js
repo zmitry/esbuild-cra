@@ -1,0 +1,14 @@
+process.env.NODE_ENV = "production";
+
+const paths = require("./paths");
+const overrides = require("./rewire");
+
+// load original config
+const webpackConfig = require(paths.webpackConfigPath);
+// override config in memory
+require.cache[require.resolve(paths.webpackConfigPath)].exports = (env) => {
+  return overrides.webpack(webpackConfig(env), env);
+};
+
+// run original script
+require(paths.scriptVersion + "/scripts/build");
